@@ -14,13 +14,14 @@
     "lint": "eslint --fix --cache --ignore-path .gitignore src docs",
     "release": "run-s test build",
     "start": "run-s build start-node",
-    "start-node": "node --trace-warnings dist/index.js",
+    "start-node": "node --trace-warnings dist/index_makizushi.js",
     "test": "run-s lint test-flow test-unit",
     "test-unit": "tap --reporter classic --no-coverage test/unit",
     "test-flow": "flow .",
     "test-cov": "nyc --require=flow-remove-types/register --reporter=text-summary --reporter=lcov --cache npm run test-unit"
   },
   "dependencies": {
+    "@mapbox/makizushi": "^2.0.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
     "eslint-config-geostart": "git+https://github.com/geostarters/eslint-config-geostart.git",

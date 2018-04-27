@@ -18,12 +18,12 @@ app.use(bodyParser.raw());
 app.use(cors());
 
 process.on("unhandledRejection", (reason, p) => {
-
 	console.log("Unhandled Rejection at: Promise", p, "reason:", reason);
-
 });
 
-app.use("/api/", apiRoutes());
+app.use("/maki", express.static('static/images', {fallthrough: true}));
+
+app.use("/maki/", apiRoutes());
 
 app.listen(app.get("port"));
 console.log(`App listening on ${app.get("port")}`);

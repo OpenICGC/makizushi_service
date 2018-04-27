@@ -13,3 +13,4 @@ flow-coverage
 .DS_Store
 .nyc_output
 .eslintcache
+package-lock.json
